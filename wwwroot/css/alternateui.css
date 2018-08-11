@@ -1,0 +1,49 @@
+﻿@charset "UTF-8";
+/* ==================================================
+CSS Document: Stylesheet alternateui.css
+
+Handeln specifischer ui sizes und Einstellungen (e.g. Phone, I-Pad ...)
+================================================== */
+
+@media only screen and (device-width: 768px) and (orientation: portrait) {
+    .formlinks {
+        width: 100%;
+    }
+    .formrechts {
+        width: 100%;
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) {
+    .formlinks {
+        width: 100%;
+    }
+    .formrechts {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .formlinks {
+        width: 100%;
+    }
+    .formrechts {
+        width: 100%;
+    }
+}
+
+@media only print {
+    #startlink {
+        display:none;
+    }
+    #stoplink {
+        display:none;
+    }
+    #nextlink {
+        display:none;
+    }
+}
+
+/* ==================================================
+ENDE
+================================================== */

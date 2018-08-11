@@ -1,0 +1,22 @@
+﻿@charset "UTF-8";
+/* ==================================================
+CSS Document: Stylesheet default.css
+
+1. Kalibrierung und Restauration
+2. Allgemeine Styles
+3. Styles für Layoutbereiche
+4. Sonstige styles
+5. Styles für unterschiedliche Bildschirme
+================================================== */
+
+/* ==================================================
+1. Kalibrierung und Restauration
+================================================== */
+
+@import url(fundament.css);
+@import url(bildschirm.css);
+@import url(alternateui.css);
+
+/* ==================================================
+ENDE
+================================================== */

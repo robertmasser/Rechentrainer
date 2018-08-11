@@ -1,0 +1,190 @@
+﻿@charset "UTF-8";
+/* ==================================================
+CSS Document: Stylesheet default.css
+
+1. Allgemeine Styles
+2. Styles Layoutbereiche
+3. Sonstige styles
+
+================================================== */
+
+@media all {
+    /* ==================================================
+2. Allgemeine Styles
+================================================== */
+
+    body {
+        color: #444;
+        text-align: center;
+        background-color: #FFF;
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+
+    .extraline {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        float: left;
+    }
+
+    .labelzahl {
+        display: inline-block;
+        width:60px;
+    }
+
+    .falschesergebnis {
+        font-size: 180%;
+        font-weight: bold;
+        color: red;
+    }
+
+    .results {
+        display:inline-block;
+        width:60px;
+        font-size:150%;
+        background-color:red;
+    }
+
+    .stoplink {
+        display: inline-block;
+        padding: 2px 2px 2px 2px;
+        margin: 2px 2px 2px 2px;
+        background-repeat: no-repeat;
+        background-position: right center;
+        vertical-align: middle;
+        text-align: center;
+        width: 128px;
+        height: 128px;
+    }
+
+        .stoplink:hover {
+            background-color: #fff;
+        }
+
+    .actionlink {
+        display: inline-block;
+        padding: 2px 2px 2px 2px;
+        margin: 2px 2px 2px 2px;
+        background-repeat: no-repeat;
+        background-position: right center;
+        vertical-align: middle;
+        text-align: center;
+        width: 100%;
+    }
+
+        .actionlink:hover {
+            background-color: #fff;
+        }
+
+    .classbutton {
+        border: 1px solid #888;
+        padding: 10px 20px 10px 20px;
+        margin-top: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 160%;
+        background-color: #FFEE66;
+        float: left;
+    }
+
+        .classbutton:hover {
+            background-color: #FFFF00;
+            cursor: pointer;
+        }
+
+    form {
+        margin-top: 15px;
+        padding: 10px 20px 10px 20px;
+        border: 0px; /* solid #888; */
+    }
+
+    fieldset.nostyle {
+        border: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    label {
+        display: block;
+        cursor: pointer;
+        font-size: 128%;
+    }
+
+    span, text {
+        margin-bottom: 1em;
+        font-size: 220%;
+    }
+
+    input,
+    input#name,
+    input#email,
+    input#arrival,
+    input#departure,
+    select,
+    textarea {
+        width: 100%;
+        border: 1px solid #888;
+        margin-bottom: 1em;
+        font-size: 220%;
+    }
+
+    textarea {
+        height: 50px;
+    }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            background-color: #ffeda0;
+        }
+
+    .txtBoxHTML {
+        width: 100%;
+        height: 120px;
+        border: 3px solid #ccc;
+        padding: 5px;
+    }
+
+    /* ==================================================
+3. Styles f�r Layoutbereiche
+================================================== */
+
+    .formlinks {
+        width: 45%;
+        float: left;
+    }
+
+        div.formlinks input[type='checkbox'] {
+            width: auto;
+        }
+
+    div.formlinks input.classbutton {
+        width: auto;
+        min-width: 0;
+        display: table;
+    }
+
+    .formrechts {
+        width: 45%;
+        float: right;
+    }
+
+        div.formrechts input[type='checkbox'] {
+            width: 100%;
+        }
+
+    div.formrechts input.classbutton {
+        width: auto;
+        min-width: 0;
+        display: table;
+    }
+	
+/* ==================================================
+4. Sonstige styles
+================================================== */
+}
+
+/* ==================================================
+ENDE
+================================================== */

@@ -1,0 +1,122 @@
+﻿@charset "UTF-8";
+/* ==================================================
+CSS Document: Stylesheet fundament.css
+Generell zu verwnedendes stylesheet (als basis)
+
+1. Kalibrierung 
+2. Restauration der Abst�nde
+3. Grundlegende Fromatierung
+4. 
+================================================== */
+
+/* ==================================================
+1. Kalibrierung
+================================================== */
+@media all {
+
+html { overflow-y: scroll; }
+
+body, div,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, code,
+ul, ol, li, dl, dt, dd,
+table, th, td,
+form, input, textarea {
+    padding: 0;
+    margin: 0;
+}
+
+/* ==================================================
+2. Restauration der Abst�nde
+================================================== */
+
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl {
+    margin-bottom: 1em;
+}
+
+blockquote { margin: 1em 2em; }
+
+ul, ol, dl { margin-left: 1em; }
+
+li, dd { margin-left: 2em; }
+
+ul ul, ul ol, ul dl,
+ol ul, ol ol, ol dl,
+dl ul, dl ol, dl dl {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Aufz�hlungszeichen */
+ul { list-style-type: square; }
+ol { list-style-type: decimal; }
+
+ul ul { list-style-type: disc; }
+ol ol { list-style-type: lower-alpha; }
+
+ul ol { list-style-type: decimal; }
+ol ul { list-style-type: square; }
+
+/* Tabellen */
+table { border-collapse: collapse; border-spacing: 0; }
+td { valign: top; }
+
+/* formulare und verlinkte Bilder ohne Rahmen */
+a img { border: none; }
+
+/* Abst�nde nach unten und links */
+h1, h2, p, ul, ol { margin-bottom: 1em; }
+ul ul { margin-bottom: 0em; }
+li { margin-left: 1em; }
+
+}
+
+/* ==================================================
+3. Grundlegende Fromatierung
+================================================== */
+body {
+    background-color: White;
+    color: Black;
+    font-family: Verdana, Ariel, Helvetica, Sans-Serif;
+    font-size: 120%;
+}
+
+h1 { font-size: 200%; }
+h2 { font-size: 184.62%; }
+h3 { font-size: 153.85%; }
+h4 { font-size: 138.46%; }
+h5 { font-size: 123.08%; }
+h6 { font-size: 107.69%; }
+
+/* floats clearing */
+.clearing { clear: both; }
+
+/* gefloatete elemente umschliessen */
+.containingfloats { overflow: hidden; }
+
+/* clear fix integration */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+/* hide elements */
+.hide {
+    position: absolute;
+    left: -32768px;
+    top: -32768px;
+    width: 0;
+    height: 0;
+    font-size: 0;
+}
+
+
+/* ==================================================
+ENDE
+================================================== */

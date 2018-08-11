@@ -1,0 +1,91 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Rechnungen";
+}
+
+@if (Model.Rechnen.ShowResult)
+{
+    <h2>Super, du hattest nur @Model.Rechnen.Ergebnis.Fehler Fehler in @Model.Rechnen.Ergebnis.Dauer Sekunden!</h2>
+    <h2>Hier dein detailiertes Ergebnis:</h2>
+}
+
+<form asp-page-handler="Index" method="post">
+    <div class="formlinks">
+        <div class="extraline">
+            <span>Rechendauer [sec.]: </span>
+            <input class="labelzahl" asp-for="@Model.Rechnen.RechenZeit.Dauer" />
+        </div>
+        <a href="javascript:start();"><div id="startlink" class="stoplink" style="background-image:url('../../images/Start.png')"></div></a>
+        <div hidden=@(!Model.Rechnen.ShowResult) id="RechnungenLinks">
+            @for (int i = 0; i < 7; i++)
+            {
+                @if (Model.Rechnen.ShowResult && Model.Rechnen.Rechnungen[i].Ergebnis != Model.Rechnen.Rechnungen[i].RichtigesErgebnis)
+                {
+                    <div><p class="falschesergebnis">Leider falsch, richtig wäre: @Model.Rechnen.Rechnungen[i].RichtigesErgebnis</p></div>
+                }
+                <div class="extraline">
+                    <span>@Model.Rechnen.Rechnungen[i].ErsterWert</span><text> + &nbsp;</text>
+                    <span>@Model.Rechnen.Rechnungen[i].ZweiterWert</span><text> = &nbsp;</text>
+                    <input class="labelzahl" asp-for="@Model.Rechnen.Rechnungen[i].Ergebnis" />
+                    <input hidden asp-for="@Model.Rechnen.Rechnungen[i].RichtigesErgebnis" />
+                    <input hidden asp-for="@Model.Rechnen.Rechnungen[i].ErsterWert" />
+                    <input hidden asp-for="@Model.Rechnen.Rechnungen[i].ZweiterWert" />
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="formrechts">
+        <div hidden=@(!Model.Rechnen.ShowResult) id="RechnungenRechts">
+            @for (int i = 7; i < 14; i++)
+            {
+                @if (Model.Rechnen.ShowResult && Model.Rechnen.Rechnungen[i].Ergebnis != Model.Rechnen.Rechnungen[i].RichtigesErgebnis)
+                {
+                    <div><p class="falschesergebnis">Leider falsch, richtig wäre: @Model.Rechnen.Rechnungen[i].RichtigesErgebnis</p></div>
+                }
+                <div class="extraline">
+                    <span>@Model.Rechnen.Rechnungen[i].ErsterWert</span><text> + &nbsp;</text>
+                    <span>@Model.Rechnen.Rechnungen[i].ZweiterWert</span><text> = &nbsp;</text>
+                    <input class="labelzahl" asp-for="@Model.Rechnen.Rechnungen[i].Ergebnis" />
+                    <input hidden asp-for="@Model.Rechnen.Rechnungen[i].RichtigesErgebnis" />
+                    <input hidden asp-for="@Model.Rechnen.Rechnungen[i].ErsterWert" />
+                    <input hidden asp-for="@Model.Rechnen.Rechnungen[i].ZweiterWert" />
+                </div>
+            }
+        </div>
+        @if (Model.Rechnen.ShowResult)
+        {
+            <a href="Index"><div id="stoplink" class="stoplink" style="background-image:url('../../images/Next.png')"></div></a>
+        }
+        else
+        {
+            <a href="javascript:next();"><div id="stoplink" class="stoplink" style="background-image:url('../../images/Stop.png')"></div></a>
+        }
+
+    </div>
+
+    <div>
+        <input hidden type="submit" id="submit" />
+    </div>
+</form>
+
+<script type="text/javascript">
+    var check = null;
+
+    function start() {
+        var cnt = 0;
+        document.getElementById("RechnungenLinks").removeAttribute("hidden");
+        document.getElementById("RechnungenRechts").removeAttribute("hidden");
+        if (check == null) {
+            check = setInterval(function () {
+                cnt += 1;
+                document.getElementById("Rechnen_RechenZeit_Dauer").value = cnt;
+            }, 1000);
+        }
+    }
+
+    function next() {
+        $("#submit").click();
+    }
+</script>

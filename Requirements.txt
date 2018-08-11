@@ -1,0 +1,81 @@
+﻿Korrekturen:
+----- styling -----
+Index.cshtml	=> add class extraline & labelzahl
+bildschirm.css	=> add span, text line 113; font-size darunter von 140 auf 220
+				=> remove formlinks & formrechts - erste sub-klasse
+				=> labelzahl: font-size entfernen & width auf 60px
+
+----- code -----
+
+<input asp-for="@Model.Rechnen.RechenZeit.Dauer" />
+<a href="javascript:start();">
+
+@if (Model.Rechnen.ShowResult)
+{
+    <h2>Super, du hattest nur @Model.Rechnen.Ergebnis.Fehler Fehler in @Model.Rechnen.Ergebnis.Dauer Sekunden!</h2>
+    <h2>Hier dein detailliertes Ergebnis:</h2>
+}
+
+@if (Model.Rechnen.ShowResult && Model.Rechnen.Rechnungen[i].Ergebnis != Model.Rechnen.Rechnungen[i].RichtigesErgebnis)
+            {
+                <div id="Result@(i)" style="font-size:100%;background-color:red;">Leider falsch, richtig wäre: @Model.Rechnen.Rechnungen[i].RichtigesErgebnis</div>
+            }
+
+<input asp-for="@Model.Rechnen.Rechnungen[i].RichtigesErgebnis" />
+
+OnGet: if (Rechnen == null) { Rechnen = new RechnenClass(); Rechnen.Initialize(); }
+
+
+Werte auto-generieren
+Klasse für Ergebnis
+Ergebnis berechnen - Funktion
+cshtml.cs Klasse fertigstellen & erklären
+
+----- slides -----
+"C:\Users\damas\OneDrive\Dokumente\Mobile DevOps slides.pptx"
+
+----- azure -----
+- Login
+- deploy app-service
+- make small change
+- redeploy app service
+
+
+----- Requirements -----
+Zahlen zufällig generieren
+Als Rechnungen darstellen
+Ergebnis ausrechnen
+
+Mehrere Rechnungen erstellen 2 x 7 Rechnungen
+Auf der View anzeigen aber verstecken
+Startbutton -> zeigt rechnungen an & startet Timer
+Stopbutton -> stopt den Timer und ergebnis an Backend code senden
++ und - Rechnungen ohne komma - gemischt von 0 .. 99
+
+Ergebnis auswerten
+- Zeit
+- Alle rechnungen Zeigen 
+	-> bei falschen Ergebnissen ergebnis anzeigen 
+	& richtiges Ergebnis darüber anzeigen
+	-> richtiges ergebnis soll grün sein
+	Von 14 sind 10 richtig und die Zeit anzeigen
+
+Wieder einen Button um neue Rechnungen zu erstellen
+
+----- Design -----
+Erste View:
+Ganz oben "Startbutton - Bildchen vom Internet
+Oben Timer anzeigen
+In 2 Spalten jeweils 7 Rechnungen
+in einer Zeile erstezahl +/- zweite zahl = Ergebnis
+Für kleine Bildschirme - beide Spalten untereinander zeigen
+Stopbutton - als Foto vom Internet
+
+Zweite View:
+Ergebnis als Text: Super du hast nur 2 Fehler gemacht und bist in 25 sec. fertig geworden
+Bei mehr als 50% falsch - text ändert sich !!!
+In 2 Spalten jeweils 7 Rechnungen
+Über Zeile mit Fehler das richtige Ergebnis anzeigen
+in einer Zeile erstezahl +/- zweite zahl = Ergebnis
+Für kleine Bildschirme - beide Spalten untereinander zeigen
+Neue Rechnungen - als Foto vom Internet
